@@ -28,6 +28,8 @@ class Crociera:
         try:
             input_file = open(file_path,'r')
             reader = csv.reader(input_file)
+            self.cabine.clear()
+            self.passeggeri.clear()
             for riga in reader:
                 codice = riga[0]
                 if codice.startswith('CAB'):
@@ -54,17 +56,18 @@ class Crociera:
                 print(p)
 
         except FileNotFoundError:
-            print("File not found")
+            print(f"File {file_path} not found")
 
 
     def assegna_passeggero_a_cabina(self, codice_cabina, codice_passeggero):
         """Associa una cabina a un passeggero"""
         trovato_cabina = False
+        passeggero_valido = False
         for c in self.cabine:
             if c.codice.lower() == codice_cabina.strip().lower() and not c.prenotata:
                 trovato_cabina = True
 
-                passeggero_valido = False
+
                 for p in self.passeggeri:
                     if p.codice.lower() == codice_passeggero.strip().lower() and p.cabina_prenotata == '':
                         passeggero_valido = True

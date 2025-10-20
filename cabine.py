@@ -7,7 +7,11 @@ class Cabina:
         self.prenotata = False
 
     def __str__(self):
-        return f'{self.codice}, {self.num_letti}, {self.ponte}, {self.prezzo}, {self.prenotata}'
+        if not self.prenotata:
+            return f'{self.codice}, {self.num_letti}, {self.ponte}, {self.prezzo}'
+        else:
+            return f'{self.codice}, {self.num_letti}, {self.ponte}, {self.prezzo}, Cabina prenotata'
+
 
 
 
