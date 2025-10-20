@@ -5,8 +5,8 @@ class Passeggero:
         self.cognome = cognome
         self.cabina_prenotata = ''
 
-    def __str__(self):
+    def __repr__(self):
         if self.cabina_prenotata != '':
-            return f'{self.codice}, {self.nome}, {self.cognome},  Cabina prenotata:  {self.cabina_prenotata}'
+            return f'Codice = {self.codice}, Nome = {self.nome}, Coognome = {self.cognome},  Cabina prenotata:  {self.cabina_prenotata}'
         else:
-            return f'{self.codice} {self.nome} {self.cognome} Nessuna cabina prenotata'
+            return f'Codice = {self.codice}, Nome = {self.nome}, Coognome = {self.cognome}, Nessuna cabina prenotata'

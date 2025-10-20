@@ -6,11 +6,11 @@ class Cabina:
         self.prezzo = float(prezzo)
         self.prenotata = False
 
-    def __str__(self):
+    def __repr__(self):
         if not self.prenotata:
-            return f'{self.codice}, {self.num_letti}, {self.ponte}, {self.prezzo}'
+            return f'Codice = {self.codice}, Letti = {self.num_letti}, Ponte = {self.ponte},Prezzo = {self.prezzo}, Cabina non prenotata'
         else:
-            return f'{self.codice}, {self.num_letti}, {self.ponte}, {self.prezzo}, Cabina prenotata'
+            return f'Codice = {self.codice}, Letti = {self.num_letti}, Ponte = {self.ponte},Prezzo = {self.prezzo}, Cabina prenotata'
 
 
 
@@ -22,8 +22,8 @@ class Ospita_Animali(Cabina):
         self.num_animali = int(num_animali)
         self.prezzo = float(prezzo)*(1+0.10*self.num_animali)
 
-    def __str__(self):
-        return f'{super().__str__()}, {self.num_animali}'
+    def __repr__(self):
+        return f'{super().__repr__()}, Num. Animali =  {self.num_animali}'
 
 
 class Deluxe(Cabina):
@@ -32,5 +32,5 @@ class Deluxe(Cabina):
         self.tipologia = tipologia
         self.prezzo = float(prezzo)*(1.20)
 
-    def __str__(self):
-        return f'{super().__str__()}, {self.tipologia}'
+    def __repr__(self):
+        return f'{super().__repr__()}, Tipologia = {self.tipologia}'

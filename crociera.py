@@ -50,8 +50,10 @@ class Crociera:
                     self.passeggeri.append(passeggero)
             input_file.close()
 
+            print(f'Lista cabine crociera')
             for c in self.cabine:
                 print(c)
+            print(f'\nLista passeggeri crociera')
             for p in self.passeggeri:
                 print(p)
 
